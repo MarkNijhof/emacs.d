@@ -5,8 +5,8 @@
 
 ;; ace-jump-mode!
 (package-require 'ace-jump-mode)
-(global-set-key (kbd "C-ø") 'ace-jump-mode)
-(global-set-key (kbd "M-ø") 'ace-jump-mode-pop-mark)
+(global-set-key (kbd "C-j") 'ace-jump-mode)
+(global-set-key (kbd "M-j") 'ace-jump-mode-pop-mark)
 (eval-after-load "ace-jump-mode"
   '(ace-jump-mode-enable-mark-sync))
 

@@ -28,6 +28,7 @@
 (setq linum-disabled-modes
       '(term-mode slime-repl-mode magit-status-mode help-mode nrepl-mode
                   xwidget-webkit-mode revealjs-mode))
+
 (defun linum-on ()
   (unless (or (minibufferp) (member major-mode linum-disabled-modes))
     (linum-mode 1)))
@@ -55,43 +56,6 @@
 ;; Prepare colour themes
 (require 'term)
 
-(defun theme-light ()
-  (interactive)
-  (load-theme 'anti-zenburn)
-  (zenburn-with-color-variables
-   (custom-theme-set-faces
-    'anti-zenburn
-
-    `(mode-line
-      ((,class (:foreground ,zenburn-green+1
-                            :background ,zenburn-bg-1
-                            :box (:line-width -1 :style released-button)))
-       (t :inverse-video t)))
-    `(mode-line-buffer-id ((t (:foreground ,zenburn-yellow :weight bold))))
-    `(mode-line-inactive
-      ((t (:foreground ,zenburn-green-1
-                       :background ,zenburn-bg-05
-                       :box (:line-width -1 :style released-button)))))
-    `(powerline-active1 ((t (:background ,zenburn-bg-05 :inherit mode-line))))
-    `(powerline-active2 ((t (:background ,zenburn-bg+2 :inherit mode-line))))
-    `(powerline-inactive1 ((t (:background ,zenburn-bg+1 :inherit mode-line-inactive))))
-    `(powerline-inactive2 ((t (:background ,zenburn-bg+3 :inherit mode-line-inactive))))))
-  (set-face-background 'default "#ffffff")
-  (set-face-foreground 'default "#000000")
-  (set-face-background 'region "#d4d4d4")
-  (set-face-foreground 'region nil)
-  (set-face-background 'linum "#f0f0f0")
-  (set-face-background 'fringe "#f0f0f0")
-
-  (set-face-foreground 'term-color-black "#ffffff")
-  (set-face-foreground 'term-color-red "#f5666d")
-  (set-face-foreground 'term-color-green "#3cb64a")
-  (set-face-foreground 'term-color-yellow "#ce5c00")
-  (set-face-foreground 'term-color-blue "#00578e")
-  (set-face-foreground 'term-color-magenta "#d020f0")
-  (set-face-foreground 'term-color-cyan "#6799cc")
-  (set-face-foreground 'term-color-white "#000000"))
-
 (defun theme-dark ()
   (interactive)
   ;; (load-theme 'bubbleberry t)
@@ -113,7 +77,10 @@
   (set-face-foreground 'term-color-blue "#8cd0d3")
   (set-face-foreground 'term-color-magenta "#dc8cc3")
   (set-face-foreground 'term-color-cyan "#93e0e3")
-  (set-face-foreground 'term-color-white "#dcdccc"))
+  (set-face-foreground 'term-color-white "#dcdccc")
+  (set-face-background 'linum "#000000")
+  (set-face-background 'fringe "#f0f0f0")
+  )
 
 (theme-dark)
 
@@ -196,7 +163,7 @@
 (eval-after-load "skewer-mode" '(diminish 'skewer-mode))
 (eval-after-load "auto-indent-mode" '(diminish 'auto-indent-minor-mode))
 (eval-after-load "highlight-parentheses" '(diminish 'highlight-parentheses-mode))
-(eval-after-load "subword" '(diminish 'subword-mode))
+;;(eval-after-load "subword" '(diminish 'subword-mode))
 (eval-after-load "anzu" '(diminish 'anzu-mode))
 (eval-after-load "cider" '(diminish 'cider-mode))
 (eval-after-load "smartparens" '(diminish 'smartparens-mode))
