@@ -30,6 +30,7 @@
   (when (file-directory-p project)
     (add-to-list 'load-path project)))
 
+
 ;; Set paths to custom.el and loaddefs.el
 (setq autoload-file (concat dotfiles-dir "loaddefs.el"))
 (setq custom-file (concat dotfiles-dir "custom.el"))
@@ -73,38 +74,38 @@
 ;; Define subpackages by platform
 
 (setq bodil-pkg-full
-      '(bodil-defuns
-        bodil-session
+      '(;; bodil-defuns
+        ;; bodil-session
         bodil-theme
         ;;mark-theme
         bodil-nav
-        bodil-editing
-        bodil-snippets
+        ;; bodil-editing
+        ;; bodil-snippets
         bodil-complete
         bodil-ido
-        bodil-lisp
+        ;; bodil-lisp
         ;; bodil-paredit
-        bodil-smartparens
-        bodil-js
-        bodil-markup
-        bodil-c
-        bodil-markdown
-        bodil-python
-        bodil-erlang
-        bodil-haskell
-        bodil-magit
+        ;; bodil-smartparens
+        ;; bodil-js
+        ;; bodil-markup
+        ;; bodil-c
+        ;; bodil-markdown
+        ;; bodil-python
+        ;; bodil-erlang
+        ;; bodil-haskell
+        ;; bodil-magit
         bodil-terminal
-        ;;bodil-twitter
-        bodil-orgmode
-        bodil-flycheck
+        ;; bodil-twitter
+        ;; bodil-orgmode
+        ;; bodil-flycheck
         bodil-codestyle
         bodil-dired
         bodil-helm
         bodil-project
-        bodil-misc-modes
-        bodil-multimodes
-        bodil-revealjs
-        ;;bodil-chat
+        ;; bodil-misc-modes
+        ;; bodil-multimodes
+        ;; bodil-revealjs
+        ;; bodil-chat
         ))
 
 ;; Now load other things

@@ -90,4 +90,17 @@ Symbols matching the text at point are put first in the completion list."
            (insert "~/")
          (call-interactively 'self-insert-command))))))
 
+ (defun ido-find-file-in-tag-files ()
+   (interactive)
+   (save-excursion
+     (let ((enable-recursive-minibuffers t))
+       (visit-tags-table-buffer))
+     (find-file
+      (expand-file-name
+       (ido-completing-read
+        "Project file: " (tags-table-files) nil t)))))
+
+(define-key global-map (kbd "C-x C-g") 'ido-find-file-in-tag-files)
+(define-key global-map (kbd "C-x .") 'ido-find-tag)
+
 (provide 'bodil-ido)
